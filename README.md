@@ -1,3 +1,3 @@
 # Eric-Blan.github.io
 
-Hihi testing it's me Eric.
+This is a readme.
