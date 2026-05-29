@@ -1,0 +1,43 @@
+nav {
+    text-align: center;
+    background-color: #6ea5ff;
+    padding:20px;
+    color: white;
+}
+
+nav a {
+    color:white
+}
+
+nav a:visited{
+    color:darkblue
+}
+
+
+body {
+    background-color: rgb(208, 233, 255);
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.contract {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    background-color: #6ea5ff;
+    padding:20px;
+    color: white;
+}
+
+footer a {
+    color:white
+}
+
+footer a:visited{
+    color:darkblue
+}
