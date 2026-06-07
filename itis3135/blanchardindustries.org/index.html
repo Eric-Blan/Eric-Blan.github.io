@@ -7,13 +7,25 @@
 <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 <style>
     /*https://coolors.co/8e9aaf-cbc0d3-efd3d7-feeafa-dee2ff*/
-    h1 {
+    header img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+    }
+    
+    header {
         text-align: center;
         font-family: Arial, sans-serif;
         background-color: #dee2ff;
         padding: 20px;
         
         }
+
+    .home {
+        background-color: #8e9aaf;
+        padding: 20px;
+    }
+
     body {
         background-color: #cbc0d3;
         max-width: 1200px;
@@ -35,7 +47,8 @@
     }
     ul {
         text-align: left;
-        font-size: 105%;
+
+        list-style-type: square;
     }
     footer {
         background-color: #8e9aaf;
@@ -50,24 +63,32 @@
 </head>
 <body>
     <header>
-        <h1>Blanchard Industries</h1>
+        <h1>Blanchard Industries <img src="https://openclipart.org/image/800px/355909" alt="Snake Logo"></h1>
+        
     </header>
     <main>
+        <h2 class="home">Home</h2>
+
         <div class="blurb">
-            <h2>Who are we?</h2>
-                <p>Founded in the year 2026, Blanchard Industries has revolutionized graphic design for companies everywhere, with top quality products guaranteed to put eyes on your business.</p>
+            <h3>Who are we?</h3>
+                <p>Founded in the year 2026, Blanchard Industries has revolutionized graphic design for companies everywhere, with top quality products guaranteed to put eyes on your business. With a team of award-winning creatives and strategists, we deliver top-quality visual identities guaranteed to put eyes on your business — and keep them there. From startups to Fortune 500 firms, we craft brands that mean something.</p>
 
         </div>
         <div class="mission">
-            <h2>What We Bring to the Table</h2>
+            <h3>What We Bring to the Table</h3>
             <ul>
                 <li>Our employees have worked with industry giants, and redesigned their logos</li>
                 <li>We pride ourselves on our fast delivery: no matter the demand!</li>
                 <li>A track record of good customer feedback</li>
+                <li>Transparent pricing with no hidden fees</li>
                 <li>Quick and efficient communication, and we're also available 24/7!</li>
             </ul>
         </div>
-        
+
+        <div class="blurb">
+        <h3>What We Can Do For You</h3>
+      <p>Whether you need a complete brand identity built from the ground up, a refreshed logo that respects your history while moving you forward, or a full digital presence including website design, social media assets, and print collateral — Blanchard Industries handles it all under one roof. We begin every engagement with a deep discovery phase to understand your audience, your competitors, and your goals, then craft visual solutions that are strategically sound, beautifully executed, and built to scale with your growth.</p>
+        </div>
     </main>
 
     <footer>
