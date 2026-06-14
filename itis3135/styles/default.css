@@ -17,11 +17,31 @@ nav a:visited{
 body {
     background-color: rgb(208, 233, 255);
     font-family: Arial, sans-serif;
+    
+}
+main {
+    margin: 30px;
 }
 
 h1 {
     text-align: center;
 }
+
+ul {
+    padding: 10px;
+}
+
+li {
+    padding: 2px;
+}
+
+h3 a{
+    color: darkgreen;
+}
+h3 a:visited{
+    color: darkblue;
+}
+
 
 .contract {
     text-align: center;
