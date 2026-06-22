@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaming &ndash; My Hobby Page</title>
+<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+<link rel="icon" href="images/favicon.ico">
+
+
+<style>
+  :root {
+    --bg-deep: #14092b;
+    --bg-mid: #2a0f54;
+    --panel: #1f1140;
+    --text: #e9e2fb;
+    --text-soft: #c3b6e8;
+    --cyan: #2ef2ff;
+    --magenta: #ff3da6;
+    --gold: #ffd23f;
+    --radius: 10px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Rubik', Arial, sans-serif;
+    background: linear-gradient(160deg, var(--bg-deep), var(--bg-mid));
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.65;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--cyan);
+    color: #0b0420;
+    padding: 8px 14px;
+    border-radius: 0 0 8px 0;
+    font-weight: bold;
+    z-index: 999;
+  }
+
+  .skip-link:focus { left: 0; }
+
+  header {
+    background: rgba(10, 4, 26, 0.85);
+    padding: 24px 5vw 16px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 3px solid var(--cyan);
+  }
+
+  .gaminghead {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.8rem;
+    color: var(--gold);
+    text-shadow: 2px 2px 0 var(--magenta);
+    margin-bottom: 14px;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+  }
+
+  .nav-list li { display: flex; align-items: center; }
+
+  .nav-list li:not(:last-child)::after {
+    content: "\1F579";
+    margin: 0 12px;
+    font-size: 0.85rem;
+    opacity: 0.75;
+  }
+
+  .nav-list a {
+    color: var(--text-soft);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    padding: 6px 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .nav-list a:hover,
+  .nav-list a:focus {
+    color: var(--cyan);
+    border-color: var(--cyan);
+  }
+
+  .nav-list a[aria-current="page"] {
+    color: var(--magenta);
+    border-color: var(--magenta);
+  }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 6vw 60px;
+  }
+
+  i {
+    text-align: center;
+    margin: auto;
+  }
+
+
+  .tab-section { display: none; }
+  .tab-section[class*="active"] { display: block; }
+
+  .tab-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
+    color: var(--cyan);
+    margin-bottom: 20px;
+    border-bottom: 2px dashed var(--magenta);
+    padding-bottom: 10px;
+  }
+
+  .tab-section p { margin-bottom: 16px; color: var(--text); }
+
+  .tab-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 24px;
+    background: var(--panel);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .tab-section caption {
+    text-align: left;
+    font-weight: bold;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+  }
+
+  .tab-section th,
+  .tab-section td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.92rem;
+  }
+
+  .tab-section thead th {
+    background: rgba(46, 242, 255, 0.12);
+    color: var(--cyan);
+  }
+
+  .tab-section ul.list,
+  .tab-section ol.list {
+    margin: 0 0 20px 22px;
+  }
+
+  .tab-section ul.list li,
+  .tab-section ol.list li { margin-bottom: 8px; }
+
+  .fig {
+    background: var(--panel);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius);
+    padding: 18px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .fig svg { flex-shrink: 0; width: 56px; height: 56px; }
+
+  .icon-cyan { color: var(--cyan); }
+  .icon-magenta { color: var(--magenta); }
+  .icon-gold { color: var(--gold); }
+
+  .fig figcaption { font-size: 0.92rem; color: var(--text-soft); }
+
+  .ai-note {
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    margin: 6px 0 24px 0;
+    padding-left: 14px;
+    border-left: 3px solid var(--gold);
+  }
+
+  .mini-form {
+    background: var(--panel);
+    border-radius: var(--radius);
+    padding: 18px;
+    margin-bottom: 20px;
+  }
+
+  .mini-form label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+    color: var(--text-soft);
+  }
+
+  .mini-form input[type="text"] {
+    padding: 8px 10px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text);
+    font-family: inherit;
+  }
+
+  .mini-form input[type="text"]:focus { outline: 2px solid var(--cyan); }
+
+  .mini-form button {
+    background: var(--magenta);
+    color: #1a0a22;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .mini-form button:hover { background: var(--cyan); }
+
+  footer {
+    background: rgba(10, 4, 26, 0.95);
+    border-top: 3px solid var(--magenta);
+    padding: 28px 6vw;
+    text-align: center;
+  }
+
+  .validators {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .val-btn {
+    background: var(--panel);
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+    padding: 9px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .val-btn:hover { background: var(--cyan); color: #0b0420; }
+
+  footer p { font-size: 0.85rem; color: var(--text-soft); }
+  footer a { color: var(--gold); text-decoration: none; font-weight: bold; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .gaminghead { font-size: 1.3rem; }
+    .fig { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header>
+  <h1 class="gaminghead">Gaming</h1>
+  <nav aria-label="Hobby sections">
+    <ul class="nav-list">
+      <li><a href="#who" data-target="who">Who</a></li>
+      <li><a href="#what" data-target="what" aria-current="page">What</a></li>
+      <li><a href="#when" data-target="when">When</a></li>
+      <li><a href="#where" data-target="where">Where</a></li>
+      <li><a href="#how" data-target="how">How</a></li>
+      <li><a href="#why" data-target="why">Why</a></li>
+      <li><a href="#ai" data-target="ai">AI Prompts</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section id="who" class="tab-section">
+    <h2>Who</h2>
+
+    <p>I've been a gamer about all my life, one of my earliest memories being playing Super Smash Bros. Melee on my brothers CRT.</p>
+
+
+    <table>
+      <caption>My Gaming Interests</caption>
+      <thead>
+        <tr><th scope="col">Field</th><th scope="col">Detail</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Favorite Genres</th><td>Turn-based RPGs &amp; Action Platformers</td></tr>
+        <tr><th scope="row">Years Playing</th><td>All my life</td></tr>
+        <tr><th scope="row">Main Platforms</th><td>PC (and occassionally Nintendo Switch)</td></tr>
+      </tbody>
+    </table>
+
+    <form class="mini-form" onsubmit="return false">
+      <label for="guest-name">Your Name</label>
+      <input type="text" id="guest-name" name="guest-name">
+      <label for="guest-game">Your Favorite Game!</label>
+      <input type="text" id="guest-game" name="guest-game">
+      <button type="submit">Submit</button>
+    </form>
+
+  </section>
+  
+
+  <section id="what" class="tab-section active">
+    <h2>What</h2>
+
+    <p>Gaming, at its core, is interactive entertainment. For me
+      however, it's also a creative outlet, a competitive arena, and a way to unwind
+      all rolled into one.</p>
+
+    <p>Right now I've been playing a lot of story and dialogue heavy games, along with occassional multiplayer games with friends.</p>
+
+    <ul class="list">
+      <li>Ace Combat: I've been replaying the series in anticipation for Ace Combat 8 later this year</li>
+      <li>Fate/Extra CCC: I made the dive into the Fate rabbithole a while back and have been there ever since</li>
+      <li>Destiny: After years of being bugged I've decided to try the game out with friends</li>
+    </ul>
+    
+   
+    <figure class="fig">
+      
+      <img src="images/What_Controller.jpg" alt="Pink and White Xbox Controller" width="192" height="108">
+      <figcaption>My main controller when I'm not using a keyboard and mouse.</figcaption>
+    </figure>
+    
+
+    
+  </section>
+
+  <section id="when" class="tab-section">
+    <h2>When</h2>
+
+    <p>My gaming time follows a pretty predictable rhythm during the week.
+      A few hours a week once I'm finished with my other responsibilities</p>
+
+    <p>Certain times of year hit differently for gamers, too. Big platform
+      sales, major game launches, and esports championship seasons all tend
+      to reshape my schedule for a week or two at a time.</p>
+
+    <table>
+      <caption>Weekly Gaming Schedule</caption>
+      <thead>
+        <tr><th scope="col">Day</th><th scope="col">Typical Activity</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Weekday Evenings</th><td>Single player games, occassionally while talking to friends</td></tr>
+        <tr><th scope="row">Friday Night</th><td>Multiplayer games with friends</td></tr>
+        <tr><th scope="row">Weekend Mornings</th><td>Catch up on story-driven single-player games</td></tr>
+        <tr><th scope="row">Holiday Season</th><td>Big marathons as I play all the games I bought on sale</td></tr>
+      </tbody>
+    </table>
+
+    <figure class="fig">
+      
+      <img src="images/When_Stopwatch.png" alt="A picture of a stopwatch" width="100" height="100">
+      <figcaption>Time management is key.</figcaption>
+    </figure>
+
+  </section>
+
+  <section id="where" class="tab-section">
+    <h2>Where</h2>
+
+    <p>Most of my playtime happens on my PC at home, which I've built a few years ago and have been upgrading since.</p>
+
+    <p>A change of scenery is definitely welcome when it occurs, the atmosphere of a place can definitely make games more fun.</p>
+
+    <ul class="list">
+      <li>My home setup: Optimized for comfort</li>
+      <li>Super Abari Game Bar: A place downtown I've been to a few times mostly to play arcade rhythm games that are otherwise inaccessible</li>
+      <li>Friend's house: My friends and I get together every so often to do some couch co-op and local multiplayer stuff</li>
+    </ul>
+
+    <figure class="fig">
+      
+      <img src="images/Where_House.jpg" alt="A picture of a house in a nice looking neighborhood" width="120" height="80">
+      <figcaption>Wherever the game is, that's where I'll be.</figcaption>
+    </figure>
+    <p class="ai-note"><em>Placeholder icon &mdash; replace with your own image. Example AI prompt: "map pin icon, neon cyan outline, flat vector style."</em></p>
+  </section>
+
+  <section id="how" class="tab-section">
+    <h2>How</h2>
+
+    <p>Getting started doesn't require an expensive rig. There are cheaper options as far as consoles go, such as a Valve SteamDeck alternatives to a PC, such as the upcoming Steam Machine</p>
+
+
+    <ol class="list">
+      <li>Start with a comfortable, ergonomic setup: A (nongaming) chair and monitor height matter more than people think.</li>
+      <li>Browse the story of whatever your choice of platform is: There's new games releasing everyday and there's sure to be something that'll catch your eye.</li>
+      <li>If you have any friends that play games, ask them for recommendations!</li>
+    </ol>
+
+    <figure class="fig">
+      
+      <img src="images/How_PC_Flickr.jpg" alt="A picture of a gaming PC" width="200" height="150">
+      <figcaption>Small, consistent habits beat big, occasional grind sessions.</figcaption>
+    </figure>
+
+  </section>
+
+  <section id="why" class="tab-section">
+    <h2>Why</h2>
+
+    <p>Gaming has given me a super fun way to pass the time when I've not much else to do.</p>
+
+    <p>It's also given me connections with others, as plenty of the friends I have now I 
+      never would've known had we not had a shared passion for games.
+    </p>
+
+    <p>Some of the things that Gaming has given me:</p>
+      <ul>
+        <li>Friends</li>
+        <li>A fun way to spend my free time</li>
+        <li>Taught me life lessons and new concepts I propbably wouldn't have encountered otherwise</li>
+      </ul>
+
+      
+
+    <figure class="fig">
+      
+      <img src="images/Why_ThumbsUp.jpg" alt="A woman given a thumbs up at a party" width="200" height="150">
+      <figcaption>Having a blast</figcaption>
+    </figure>
+  </section>
+
+  <section id="ai" class="tab-section">
+    <h2>AI Prompts</h2>
+
+    <p>The images are open source ones I found on the internet. I initially used AI prompts for them but found them insatisfactory.</p>
+
+    <p>I used a prompt to determine the color scheme of this page, and help with the CSS for the elements I used. 
+    That being:<br>"I need a dark, minimalist theme for this webpage with neon highlights of various colors."</p>
+
+    <p>I also used a prompt for the section navigation, that being:<br>
+      Make me a script that will bring the user to different sections of my website while staying on the same page.</p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="validators">
+    <a class="val-btn" href="https://validator.w3.org/check?uri=https://webpages.charlotte.edu/eblanch1/itis3135/hobby/index.html" target="_blank">HTML Validator</a>
+    <a class="val-btn" href="https://jigsaw.w3.org/css-validator/validator?uri=https://webpages.charlotte.edu/eblanch1/itis3135/hobby/index.html" target="_blank">CSS Validator</a>
+    <a class="val-btn" href="https://wave.webaim.org/report#/https://webpages.charlotte.edu/eblanch1/itis3135/hobby/index.html" target="_blank">Accessibility Validator</a>
+  </div>
+  <p>Page created by <a href="https://webpages.charlotte.edu/eblanch1/itis3135/blanchardindustries.org/index.html" target="_blank">Blanchard Industries </a>&copy; 2026</p>
+</footer>
+
+<script>
+  var links = document.querySelectorAll('.nav-list a[data-target]');
+  var sections = document.querySelectorAll('.tab-section');
+
+  function showSection(id) {
+    sections.forEach(function (sec) {
+      sec.classList.toggle('active', sec.id === id);
+    });
+    links.forEach(function (a) {
+      if (a.getAttribute('data-target') === id) {
+        a.setAttribute('aria-current', 'page');
+      } else {
+        a.removeAttribute('aria-current');
+      }
+    });
+    var heading = document.querySelector('#' + id + ' h2');
+    if (heading) {
+      heading.setAttribute('tabindex', '-1');
+      heading.focus();
+    }
+  }
+
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      showSection(a.getAttribute('data-target'));
+    });
+  });
+</script>
+
+
+</body>
+</html>
