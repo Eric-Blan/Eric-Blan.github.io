@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pictures</title>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/default.css">
+
+</head>
+<body>
+        <div data-include="components/header.html"></div>
+
+
+    <main>
+        <h2>Everything Pictures</h2>
+
+        <p>This page demonstrates how images behave across different formats, sizes, and proportions on the web. It explores the difference between a large, high-quality source photo and a personal photo taken on a phone, showing how each can be converted to different formats (JPG, GIF, greyscale, and black and white), properly resized for the web, improperly stretched or squished, and improperly enlarged from a too-small source. The goal is to understand how image size and proportion choices affect load times, visual quality, and overall site performance.</p>
+
+        <!-- ======================= SECTION 1: PEXELS IMAGE ======================= -->
+        <section>
+            <h3>Demonstrating Image Manipulation with a Puppies Outdoors Photo from Pexels.com</h3>
+            <p>I chose this photo because the warm, sunlit grass and the fine detail in the puppies' fur made it a great candidate for testing how different formats and sizes affect image quality. The photo was taken by photographer Arijit Dey on Pexels, who has a number of other animal and outdoor lifestyle photos in his portfolio. The original image is a JPG, 6000 x 4000 pixels, and approximately 7.2 MB in size.</p>
+
+            <article>
+                <h4>Original Image</h4>
+                <p>Click to open the image in its original JPG format: <a href="images/puppies-outdoors-arijit-dey.jpg" target="_blank">puppies-outdoors-arijit-dey.jpg</a></p>
+            </article>
+            <article>
+                <h4>Original Image as a GIF</h4>
+                <p>Click to open the image in GIF format: <a href="images/puppies-outdoors-arijit-dey.gif" target="_blank">puppies-outdoors-arijit-dey.gif</a></p>
+                <p>Notice the loss of subtle color detail in the puppies' fur due to GIF's limited 256-color palette.</p>
+            </article>
+            <article>
+                <h4>Greyscale Version</h4>
+                <p>Click to open the image in greyscale: <a href="images/puppies-outdoors-arijit-dey-greyscale.jpg" target="_blank">puppies-outdoors-arijit-dey-greyscale.jpg</a></p>
+            </article>
+            <article>
+                <h4>Black and White Version</h4>
+                <p>Click to open the image in pure black and white: <a href="images/puppies-outdoors-arijit-dey-black-white.jpg" target="_blank">puppies-outdoors-arijit-dey-black-white.jpg</a></p>
+                <p>This version was created using GIMP's Threshold tool, producing only pure black and white pixels.</p>
+            </article>
+
+            <hr>
+
+            <article>
+                <h4>Downsizing Images with CSS</h4>
+                <figure>
+                    <img src="images/puppies-outdoors-arijit-dey.jpg" alt="Puppies outdoors image resized with CSS" style="width: 480px; height: 320px;">
+                    <figcaption>The 600x400 image displayed at an even smaller size (480x320) using inline CSS, while keeping the same proportions.</figcaption>
+                </figure>
+            </article>
+            <article>
+                <h4>Proper Reduction of Image with Editor</h4>
+                <figure>
+                    <img src="images/puppies-outdoors-arijit-dey-600x400.jpg" alt="Puppies outdoors image properly resized in GIMP to 600 by 400 pixels" width="600" height="400">
+                    <figcaption>This image was actually resized in GIMP to 600x400, rather than just scaled with CSS, resulting in a much smaller file size for faster loading.</figcaption>
+                </figure>
+            </article>
+
+            <hr>
+
+            <article>
+                <h4>Improper Image Proportions with CSS</h4>
+                <p>The following four images all started from the properly resized 600x400 image, but have been stretched or squished to incorrect proportions:</p>
+                <figure style="display: inline-block;">
+                    <img src="images/puppies-outdoors-arijit-dey-600x400.jpg" alt="Puppies outdoors image squished vertically" width="600" height="268">
+                    <figcaption>Squished vertically to 600x268 (height reduced 33%).</figcaption>
+                </figure>
+                <figure style="display: inline-block;">
+                    <img src="images/puppies-outdoors-arijit-dey-600x400.jpg" alt="Puppies outdoors image squished vertically further" width="600" height="180">
+                    <figcaption>Squished vertically even further to 600x180 (height reduced another 33%).</figcaption>
+                </figure>
+                <figure style="display: inline-block;">
+                    <img src="images/puppies-outdoors-arijit-dey-600x400.jpg" alt="Puppies outdoors image squished horizontally" width="402" height="400">
+                    <figcaption>Squished horizontally to 402x400 (width reduced 33%).</figcaption>
+                </figure>
+                <figure style="display: inline-block;">
+                    <img src="images/puppies-outdoors-arijit-dey-600x400.jpg" alt="Puppies outdoors image squished horizontally further" width="269" height="400">
+                    <figcaption>Squished horizontally even further to 269x400 (width reduced another 33%).</figcaption>
+                </figure>
+            </article>
+
+            <hr>
+
+            <article>
+                <h4>Improper Enlarging with CSS</h4>
+                <figure style="display: inline-block;">
+                    <img src="images/puppies-outdoors-arijit-dey-600x400.jpg" alt="Properly sized puppies outdoors image at 600x400" style="width: 600px; height: 400px;">
+                    <figcaption>Properly sized 600x400 image displayed at its native size.</figcaption>
+                </figure>
+                <figure style="display: inline-block;">
+                    <img src="images/puppies-outdoors-arijit-dey-150x100.jpg" alt="Small puppies outdoors image enlarged with CSS, showing pixelation" style="width: 600px; height: 400px;">
+                    <figcaption>A tiny 150x100 image forced up to 600x400 with CSS, showing clear pixelation and quality loss.</figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <hr>
+
+        <!-- ======================= SECTION 2: PERSONAL GEOMETRY IMAGE ======================= -->
+        <section>
+            <h3>Demonstrating Image Manipulation with a Personal Photo of a DVD in My Hand</h3>
+            <p>For my personal geometry photo, I chose a DVD I held for scale and proportion comparison. The photo was taken on my phone and shows my hand holding the DVD. The original image is a JPG, 3024 x 4032 pixels, and approximately 4.8 MB in size.</p>
+
+            <article>
+                <h4>Original Image</h4>
+                <p>Click to open the image in its original JPG format: <a href="images/dvd-in-hand.jpg" target="_blank">dvd-in-hand.jpg</a></p>
+            </article>
+            <article>
+                <h4>Original Image as a GIF</h4>
+                <p>Click to open the image in GIF format: <a href="images/dvd-in-hand.gif" target="_blank">dvd-in-hand.gif</a></p>
+                <p>Notice the reduced color palette compared to the original JPG.</p>
+            </article>
+            <article>
+                <h4>Greyscale Version</h4>
+                <p>Click to open the image in greyscale: <a href="images/dvd-in-hand-greyscale.jpg" target="_blank">dvd-in-hand-greyscale.jpg</a></p>
+            </article>
+            <article>
+                <h4>Black and White Version</h4>
+                <p>Click to open the image in pure black and white: <a href="images/dvd-in-hand-black-white.jpg" target="_blank">dvd-in-hand-black-white.jpg</a></p>
+                <p>This version was created using GIMP's Threshold tool.</p>
+            </article>
+
+            <hr>
+
+            <article>
+                <h4>Downsizing Images with CSS</h4>
+                <figure>
+                    <img src="images/dvd-in-hand.jpg" alt="DVD in hand image resized with CSS" style="width: 302px; height: 403px;">
+                    <figcaption>The original 3024x4032 image displayed at about 10% of its size (302x403) using inline CSS, keeping the same proportions.</figcaption>
+                </figure>
+            </article>
+            <article>
+                <h4>Proper Reduction of Image with Editor</h4>
+                <figure>
+                    <img src="images/dvd-in-hand302x403.jpg" alt="DVD in hand image properly resized in GIMP to 600 by 800 pixels" width="600" height="800">
+                    <figcaption>This image was actually resized in GIMP to 600x800, resulting in a much smaller file size for faster loading.</figcaption>
+                </figure>
+            </article>
+ 
+            <hr>
+ 
+            <article>
+                <h4>Improper Image Proportions with CSS</h4>
+                <p>The following four images all started from the properly resized 302x403 image, but have been stretched or squished to incorrect proportions:</p>
+                <figure style="display: inline-block;">
+                    <img src="images/dvd-in-hand-302x403.jpg" alt="DVD in hand image squished vertically" width="302" height="270">
+                    <figcaption>Squished vertically to 302x270 (height reduced 33%).</figcaption>
+                </figure>
+                <figure style="display: inline-block;">
+                    <img src="images/dvd-in-hand-302x403.jpg" alt="DVD in hand image squished vertically further" width="302" height="180">
+                    <figcaption>Squished vertically even further to 302x180 (height reduced another 33%).</figcaption>
+                </figure>
+                <figure style="display: inline-block;">
+                    <img src="images/dvd-in-hand-302x403.jpg" alt="DVD in hand image squished horizontally" width="202" height="403">
+                    <figcaption>Squished horizontally to 202x403 (width reduced 33%).</figcaption>
+                </figure>
+                <figure style="display: inline-block;">
+                    <img src="images/dvd-in-hand-302x403.jpg" alt="DVD in hand image squished horizontally further" width="135" height="403">
+                    <figcaption>Squished horizontally even further to 135x403 (width reduced another 33%).</figcaption>
+                </figure>
+            </article>
+ 
+            <hr>
+ 
+            <article>
+                <h4>Improper Enlarging with CSS</h4>
+                <figure style="display: inline-block;">
+                    <img src="images/dvd-in-hand-302x403.jpg" alt="Properly sized DVD in hand image at 302x403" style="width: 302px; height: 403px;">
+                    <figcaption>Properly sized 302x403 image displayed at a scaled-down size.</figcaption>
+                </figure>
+                <figure style="display: inline-block;">
+                    <img src="images/dvd-in-hand-76x101.jpg" alt="Small DVD in hand image enlarged with CSS, showing pixelation" style="width: 302px; height: 403px;">
+                    <figcaption>A tiny 76x101 image forced up to 302x403 with CSS, showing clear pixelation and quality loss.</figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <hr>
+
+    </main>
+
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.min.js"></script>
+</body>
+
+</html>
