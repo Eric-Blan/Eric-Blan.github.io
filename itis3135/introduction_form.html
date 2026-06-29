@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introduction Form</title>
+<script src="scripts/introduction.js" defer></script>
+<style>
+  :root {
+    --navy: #0f2b46;
+    --teal: #1a6b8a;
+    --cream: #f5f0e8;
+    --panel: #ffffff;
+    --rule: #d0d8e4;
+    --danger: #b5451b;
+    --text: #1a1a2e;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cream);
+    color: var(--text);
+    margin: 0;
+    padding: 30px 5%;
+  }
+
+  h1 { color: var(--navy); margin-bottom: 4px; }
+  h3 { color: var(--teal); }
+
+  main { max-width: 760px; margin: 0 auto; }
+
+  form {
+    background-color: var(--panel);
+    padding: 10px 28px 28px;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  fieldset {
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin: 18px 0;
+  }
+
+  legend {
+    font-weight: bold;
+    color: var(--navy);
+    padding: 0 6px;
+  }
+
+  label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: bold;
+    color: #2d3748;
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+
+  label.checkbox-label {
+    font-weight: normal;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  label.checkbox-label input { margin-top: 3px; }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="url"],
+  textarea,
+  input[type="file"] {
+    width: 100%;
+    padding: 9px 11px;
+    border: 2px solid var(--rule);
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-family: inherit;
+  }
+
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--teal);
+  }
+
+  textarea { resize: vertical; }
+
+  .course-entry {
+    background-color: #f7fafc;
+    position: relative;
+  }
+
+  .course-entry .delete-course-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--danger);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 0.78rem;
+    cursor: pointer;
+  }
+
+  #addCourseBtn {
+    margin-top: 8px;
+    background-color: var(--teal);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  #addCourseBtn:hover { background-color: var(--navy); }
+
+  #picPreview {
+    display: block;
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+    margin-bottom: 10px;
+  }
+
+  .form-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+
+  .form-buttons button {
+    padding: 11px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  button[type="submit"] { background-color: var(--teal); color: #fff; }
+  button[type="submit"]:hover { background-color: var(--navy); }
+
+  button[type="reset"] { background-color: #718096; color: #fff; }
+  button[type="reset"]:hover { background-color: #4a5568; }
+
+  #clearBtn { background-color: var(--danger); color: #fff; }
+  #clearBtn:hover { background-color: #8a3414; }
+
+  /* ===== Results card ===== */
+  #results {
+    background-color: var(--panel);
+    border-radius: 10px;
+    padding: 28px 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  #results h2 { color: var(--navy); margin-top: 0; }
+  #results h4 { color: var(--teal); margin-bottom: 4px; }
+
+  #results .agreement {
+    background-color: #eef6f4;
+    border-left: 4px solid var(--teal);
+    padding: 10px 14px;
+    border-radius: 4px;
+    margin-top: 0;
+  }
+
+  #results .divider {
+    text-align: center;
+    color: var(--teal);
+    font-size: 1.2rem;
+    margin: 18px 0;
+    letter-spacing: 0.4em;
+  }
+
+  #results img { border-radius: 8px; max-width: 220px; display: block; margin-bottom: 6px; }
+
+  #results figcaption { font-size: 0.85rem; color: #555; font-style: italic; }
+
+  #results ul { margin: 6px 0 6px 22px; }
+
+  #results blockquote {
+    border-left: 4px solid var(--teal);
+    margin: 14px 0;
+    padding: 8px 16px;
+    font-style: italic;
+    color: #2d3748;
+  }
+
+  #results .course-line { margin-bottom: 6px; }
+
+  #resetFromResults {
+    margin-top: 24px;
+    background-color: #718096;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  #resetFromResults:hover { background-color: #4a5568; }
+</style>
+</head>
+<body>
+
+<main>
+
+  <h1>Introduction</h1>
+  <h3>Please submit the form below.</h3>
+
+  <form id="form">
+
+    <fieldset>
+      <legend>Name</legend>
+
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" value="Eric" placeholder="Enter your first name" required>
+
+      <label for="middleName">Middle Name (or Initial)</label>
+      <input type="text" id="middleName" name="middleName" value="F." placeholder="Enter your middle name or initial (optional)">
+
+      <label for="nickname">Nickname / Preferred Name</label>
+      <input type="text" id="nickname" name="nickname" value="Eric" placeholder="Enter your nickname or preferred name (optional)">
+
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" value="Blanchard" placeholder="Enter your last name" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Acknowledgment</legend>
+
+      <label class="checkbox-label" for="ackStatement">
+        <input type="checkbox" id="ackStatement" name="ackStatement" checked required>
+        <span>I understand that what I put here is publicly available on the web and I won’t put anything here I don’t want the public to see.</span>
+      </label>
+
+      <label for="ackDate">Acknowledgement Date</label>
+      <input type="date" id="ackDate" name="ackDate" value="2026-06-28" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Mascot</legend>
+
+      <label for="mascotAdjective">Mascot Adjective</label>
+      <input type="text" id="mascotAdjective" name="mascotAdjective" value="Esoteric" placeholder="e.g. Esoteric" required>
+
+      <label for="mascotAnimal">Mascot Animal</label>
+      <input type="text" id="mascotAnimal" name="mascotAnimal" value="Badger" placeholder="e.g. Badger" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Style</legend>
+
+      <label for="divider">Divider Character</label>
+      <input type="text" id="divider" name="divider" value="✦" placeholder="e.g. ~ | ♥" maxlength="3">
+    </fieldset>
+
+    <fieldset>
+      <legend>Picture</legend>
+ 
+      <label for="pictureUpload">Upload a Picture (optional - a placeholder image will be used if you leave this blank)</label>
+      <input type="file" id="pictureUpload" name="picture" accept="image/*">
+ 
+      <label for="pictureCaption">Picture Caption</label>
+      <input type="text" id="pictureCaption" name="pictureCaption" value="A racoon I found on campus after taking my exams this spring semester" placeholder="Describe your picture" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Personal Statement</legend>
+
+      <label for="personalStatement">Personal Statement</label>
+      <textarea id="personalStatement" name="personalStatement" rows="4" placeholder="Write a short personal statement" required>I’m a senior at UNCC, studying Computer Science with a concentration in Systems and Networks. I’ve been interested in computers for a while now and built my first a few years ago. I’m looking forward to learning in this class!</textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>About Me &mdash; Main Points</legend>
+
+      <label for="bullet1">Personal Background</label>
+      <input type="text" id="bullet1" name="bullet1" value="22 years old, I’ve been living in Charlotte all my life." placeholder="Personal background" required>
+
+      <label for="bullet2">Professional Background</label>
+      <input type="text" id="bullet2" name="bullet2" value="I’ve done miscellaneous part-time jobs and volunteer work." placeholder="Professional background" required>
+
+      <label for="bullet3">Academic Background</label>
+      <input type="text" id="bullet3" name="bullet3" value="Computer Science, Class of 2027." placeholder="Academic background" required>
+
+      <label for="bullet4">Hobbies &amp; Interests</label>
+      <input type="text" id="bullet4" name="bullet4" value="Playing games with friends." placeholder="Hobbies and interests" required>
+
+      <label for="bullet5">Primary Computer</label>
+      <input type="text" id="bullet5" name="bullet5" value="Windows 11 Desktop, at home." placeholder="Primary Computer" required>
+
+      <label for="bullet6">Backup Computer</label>
+      <input type="text" id="bullet6" name="bullet6" value="Windows 10 laptop, at home or nearby library." placeholder="Backup Computer" required>
+
+      <label for="bullet7">Something Unique About Me</label>
+      <input type="text" id="bullet7" name="bullet7" value="I'm aiming to become a polyglot." placeholder="Something unique about you" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>This Semester's Courses</legend>
+
+      <div id="coursesContainer">
+        <fieldset class="course-entry" data-course-index="1">
+          <legend>Course 1</legend>
+
+          <label for="courseDept1">Department</label>
+          <input type="text" id="courseDept1" name="courseDept1" value="ITIS" placeholder="e.g. ITIS" required>
+
+          <label for="courseNum1">Number</label>
+          <input type="text" id="courseNum1" name="courseNum1" value="3135" placeholder="e.g. 3135" required>
+
+          <label for="courseName1">Name</label>
+          <input type="text" id="courseName1" name="courseName1" value="Front-End Web App Development" placeholder="Course name" required>
+
+          <label for="courseReason1">Reason</label>
+          <input type="text" id="courseReason1" name="courseReason1" value="Required for my major, and I wanted to get better at front-end development." placeholder="Why are you taking this course?" required>
+        </fieldset>
+      </div>
+
+      <button type="button" id="addCourseBtn">+ Add Another Course</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Quote</legend>
+
+      <label for="quote">Quote</label>
+      <input type="text" id="quote" name="quote" value="Would you like to sign a petition?" placeholder="Your favorite quote" required>
+
+      <label for="quoteAuthor">Quote Author</label>
+      <input type="text" id="quoteAuthor" name="quoteAuthor" value="Postal Dude" placeholder="Who said it?" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Extras</legend>
+
+      <label for="funnyThing">Funny Thing</label>
+      <input type="text" id="funnyThing" name="funnyThing" value="I thought Linkin Park was a person's name up until a few years ago." placeholder="A funny thing about you (optional)">
+
+      <label for="shareThing">Something I'd Like to Share</label>
+      <input type="text" id="shareThing" name="shareThing" value="I used to play piano as a kid." placeholder="Something you'd like to share (optional)">
+    </fieldset>
+
+    <fieldset>
+      <legend>Links</legend>
+
+      <label for="link1">LinkedIn</label>
+      <input type="url" id="link1" name="link1" value="https://www.linkedin.com/in/eric-blanchard-4a3771352/" placeholder="https://www.linkedin.com/in/...">
+
+      <label for="link2">GitHub</label>
+      <input type="url" id="link2" name="link2" value="https://github.com/Eric-Blan" placeholder="https://github.com/...">
+
+      <label for="link3">Portfolio / Personal Website</label>
+      <input type="url" id="link3" name="link3" value="https://webpages.charlotte.edu/eblanch1/" placeholder="https://yourdomain.com">
+
+      <label for="link4">freeCodeCamp</label>
+      <input type="url" id="link4" name="link4" value="https://www.freecodecamp.org/Eric_Blanchard" placeholder="https://www.freecodecamp.org/...">
+
+      <label for="link5">Codecademy</label>
+      <input type="url" id="link5" name="link5" value="https://www.codecademy.com/profiles/EricBlanchard" placeholder="https://www.codecademy.com/profiles/...">
+    </fieldset>
+
+    <div class="form-buttons">
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+      <button type="button" id="clearBtn">Clear</button>
+    </div>
+
+  </form>
+
+  <section id="results" hidden></section>
+
+</main>
+
+</body>
+</html>
