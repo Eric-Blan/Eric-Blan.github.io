@@ -3,108 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eric Blanchard | Home Page</title>
+    <title>Eric Blanchard | Home</title>
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-    
-    
+
+    <link rel="icon" type="image/png" href="itis3135/images/favicon.png">
+
+    <!-- Google Fonts (previously referenced in CSS but never imported) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
-        nav {
-            text-align: center;
-            background-color: #6ea5ff;
-            padding:20px;
-            color: white;
+        /*
+          Color palette from coolors.co:
+          https://coolors.co/1b2a4a-2e5fa3-f0f4fc-e8f0fb-f7c948
+        */
+        :root {
+            --navy:  #1b2a4a;
+            --blue:  #2e5fa3;
+            --light: #f0f4fc;
+            --panel: #ffffff;
+            --gold:  #f7c948;
+            --text:  #1b2a4a;
+            --muted: #3d5080;
         }
 
-        nav a {
-            color:white
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        nav a:visited{
-            color:darkblue
+        @media (prefers-reduced-motion: no-preference) {
+            * { scroll-behavior: smooth; }
         }
-
 
         body {
+            font-family: 'Lato', Arial, sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        
+        header,
+        main,
+        footer {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--navy);
+            padding: 32px 6%;
             text-align: center;
-            font-family: Arial, sans-serif;
-            background-color: rgb(208, 233, 255);
+            border-radius: 0 0 6px 6px;
         }
 
-        .about {
-            padding:30px;
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.4rem;
+            color: var(--gold);
+            letter-spacing: 0.02em;
         }
 
-        .hobbies {
-            padding:30px;
+        main {
+            padding: 40px 6%;
         }
 
-        .pet {
-            padding:30px;
+        h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 24px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+
+        
+        .welcome {
+            margin-bottom: 32px;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        section {
+            background-color: var(--panel);
+            border-radius: 8px;
+            padding: 24px 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(27, 42, 74, 0.08);
+        }
+
+        h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem;
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--muted);
+            margin-bottom: 0;
+        }
+
+        a {
+            color: var(--blue);
+        }
+
+        a:hover,
+        a:focus {
+            color: var(--navy);
         }
 
         footer {
+            background-color: var(--navy);
+            color: #c9d6f0;
             text-align: center;
-            background-color: #6ea5ff;
-            padding:20px;
-            color: white;
+            padding: 28px 6%;
+            font-size: 0.9rem;
+            border-radius: 6px 6px 0 0;
         }
 
-        footer a {
-            color:white
+        footer nav {
+            margin-bottom: 14px;
+            display: flex;
+            
+            justify-content: center;
         }
 
-        footer a:visited{
-            color:darkblue
+        footer nav a {
+            color: #c9d6f0;
+            text-decoration: none;
+            padding: 0 12px;
+            border-right: 1px solid #3d5080;
+            line-height: 1;
         }
 
+        footer nav a:last-child {
+            border-right: none;
+        }
+
+        footer nav a:hover,
+        footer nav a:focus {
+            color: var(--gold);
+        }
+
+        footer nav a:visited {
+            color: #a8bbdf;
+        }
+
+        footer p {
+            margin-top: 10px;
+            color: #a8bbdf;
+        }
+
+        footer p a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        footer p a:hover,
+        footer p a:focus {
+            text-decoration: underline;
+        }
     </style>
-
 </head>
-
 <body>
-    <header>
-        <nav>
-        <a href="index.html">Home |</a>
-        <a href="itis3135/index.html">ITIS3135 |</a>
-        <a href="itis3135/introduction.html">Introduction |</a>
-        <a href="itis3135/contract.html">Contract |</a>
-        <a href="itis3135/about.html">About</a>
-        </nav>
-    </header>
-<main>
-        <h1> 
-            Eric Blanchard
-        </h1>
-    
-    <div class="about">
-    <h2>About Me</h2> 
-        <p>I'm a 22 year old Computer Science student at UNC Charlotte, my concentration being Systems and Networks.</p>
-        <p></p>
-        </div>
-    
-    <div class="hobbies">
-    <h2>Hobbies</h2> 
-        <p>I love to play video games and read books.</p>
-        <p></p>
-        </div>
 
-    <div class="pet">
-    <h2>Pet</h2> 
-        <p>I own an Alaskan husky by the name of Captain.</p>
-        <p></p>
-        </div>
-    
-</main>
+    <header>
+        <h1>Eric Blanchard</h1>
+    </header>
+
+    <main>
+        <h2>Home</h2>
+
+        <p class="welcome">Welcome! I'm a Computer Science student at UNC Charlotte and this is my personal corner of the web. Here you'll find a bit about who I am, what I'm working on, and how to find me across the internet.</p>
+        <p class="welcome">Feel free to explore my course work, check out my profiles on GitHub and LinkedIn, or just say hello. I'm always happy to connect with fellow students and developers.</p>
+
+        <section class="about">
+            <h3>About Me</h3>
+            <p>I'm a 22-year-old Computer Science student at UNC Charlotte, concentrating in Systems and Networks.</p>
+        </section>
+
+        <section class="hobbies">
+            <h3>Hobbies</h3>
+            <p>I love to play video games and read books.</p>
+        </section>
+
+        <section class="pet">
+            <h3>Pet</h3>
+            <p>I own an Alaskan husky by the name of Captain.</p>
+        </section>
+
+        <section>
+            <h3>Course Work</h3>
+            <p>I'm currently enrolled in ITIS 3135 Web-Based Application Design. You can browse my <a href="itis3135/">course page</a> to see assignments and projects from the semester.</p>
+        </section>
+    </main>
+
     <footer>
-        <a href="https://webpages.charlotte.edu/eblanch1/" target="_blank">UNCC Webspace</a> |
-        <a href="https://github.com/Eric-Blan" target="_blank">GitHub</a> |
-        <a href="https://eric-blan.github.io" target="_blank">GitHub.io</a> |
-        <a href="https://eric-blan.github.io/itis3135/" target="_blank">GitHub.io ITIS3135</a> |
-        <a href="https://www.freecodecamp.org/eric_blanchard" target="_blank">FreeCodeCamp</a> |
-        <a href="https://www.codecademy.com/profiles/EricBlanchard" target="_blank">Codecademy</a> |
-        <a href="https://www.linkedin.com/in/eric-blanchard-4a3771352/" target="_blank">LinkedIn</a>
-        <p>Designed by <a href="itis3135/blanchardindustries.org/index.html" target="_blank">Blanchard Industries ©2026</a></p>
-        <p><a href="https://validator.w3.org/check?uri=https://eric-blan.github.io/itis3135/">HTML Validator | </a><a href="https://jigsaw.w3.org/css-validator/validator?uri=https://eric-blan.github.io/itis3135/">CSS Validator</a></p>    
+        <nav aria-label="External profiles">
+            <a href="https://webpages.charlotte.edu/eblanch1/" target="_blank">UNCC Page</a>
+            <a href="https://eric-blan.github.io" target="_blank">GitHub.io</a>
+            <a href="https://github.com/Eric-Blan" target="_blank">GitHub</a>
+            <a href="https://www.freecodecamp.org/eric_blanchard" target="_blank">freeCodeCamp</a>
+            <a href="https://www.codecademy.com/profiles/EricBlanchard" target="_blank">Codecademy</a>
+            <a href="https://www.linkedin.com/in/eric-blanchard-4a3771352/" target="_blank">LinkedIn</a>
+        </nav>
+        <p>Designed by <a href="itis3135/blanchardindustries.org/index.html" target="_blank">Blanchard Industries &copy; 2026</a></p>
     </footer>
+
 </body>
 </html>

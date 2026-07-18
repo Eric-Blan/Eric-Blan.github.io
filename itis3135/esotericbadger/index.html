@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esoteric Badger — Occult Curiosity Shop</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ══ HEADER ══════════════════════════════════════════════ -->
+<header>
+  <p class="site-name">Esoteric Badger</p>
+  <p class="tagline"><em>We dig up the extraordinary.</em></p>
+
+  <button id="nav-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+
+  <nav id="main-nav" aria-label="Site navigation">
+    <a href="#home"     data-section="home">Home</a>
+    <a href="#shop"     data-section="shop">Shop</a>
+    <a href="#about"    data-section="about">About</a>
+    <a href="#services" data-section="services">Services</a>
+    <a href="#contact"  data-section="contact">Contact</a>
+  </nav>
+</header>
+
+<!-- ══ MAIN ════════════════════════════════════════════════ -->
+<main>
+
+  <!-- ── HOME ─────────────────────────────────────────────── -->
+  <section id="home" class="page-section">
+
+    <div class="hero">
+      <h2>Where the veil runs thin</h2>
+      <p>A curated collection of healing stones, ritual candles, botanical herbs, and arcane curiosities — hand-selected for seekers, practitioners, and the wonderfully curious.</p>
+    </div>
+
+    <div class="glyph-rule" aria-hidden="true">☽ ✦ ☾ ✦ ☽</div>
+
+    <figure>
+      <!-- Replace src with your own shop interior photo -->
+      <img src="images/shop-interior.jpg" alt="The candlelit interior of Esoteric Badger, shelves lined with crystals and apothecary jars" width="860" height="420">
+      <figcaption>Step inside — our shelves are always growing.</figcaption>
+    </figure>
+
+    <div class="glyph-rule" aria-hidden="true">☽ ✦ ☾ ✦ ☽</div>
+
+    <h2>Find Your Stone</h2>
+    <p>Not sure where to start? Every stone carries its own energy. Let us point you toward something that resonates — click the button below and we'll suggest a starting point.</p>
+    <p>Think of it as a nudge from the universe — one you can take or leave entirely. There are no wrong answers here, only interesting ones.</p>
+
+    <!-- Dynamic feature 3: stone randomizer quiz -->
+    <div id="quiz-box">
+      <p>The stone that calls to you right now may not be the one you expected.</p>
+      <button id="quiz-btn" type="button">Reveal My Stone</button>
+      <p id="quiz-result" aria-live="polite"></p>
+    </div>
+
+  </section>
+
+  <!-- ── SHOP ─────────────────────────────────────────────── -->
+  <section id="shop" class="page-section">
+    <h2>The Shop</h2>
+
+    <p>Every item in our collection is sourced with intention — from family-run crystal mines, small-batch candle studios, and independent herbalists who care as much about the work as we do. Browse by category or let your eye wander.</p>
+
+    <p>Prices include a small blessing from the Badger. (This is non-negotiable.)</p>
+
+    <!-- Dynamic feature 2: category filter -->
+    <div class="filter-bar" role="group" aria-label="Filter by category">
+      <button class="filter-btn selected" data-filter="all"    type="button">All</button>
+      <button class="filter-btn"          data-filter="stones" type="button">Healing Stones</button>
+      <button class="filter-btn"          data-filter="candles" type="button">Ritual Candles</button>
+      <button class="filter-btn"          data-filter="herbs"  type="button">Herbs &amp; Botanicals</button>
+      <button class="filter-btn"          data-filter="tools"  type="button">Ritual Tools</button>
+    </div>
+
+    <div class="product-grid">
+
+      <article class="product-card" data-category="stones">
+        <div class="product-img-placeholder" aria-hidden="true">💜</div>
+        <h3>Amethyst Cluster</h3>
+        <p>Raw Bolivian amethyst, excellent for meditation and clarity.</p>
+        <p class="price">$18.00</p>
+      </article>
+
+      <article class="product-card" data-category="stones">
+        <div class="product-img-placeholder" aria-hidden="true">🖤</div>
+        <h3>Black Tourmaline Point</h3>
+        <p>A powerful protective stone for grounding and shielding.</p>
+        <p class="price">$12.00</p>
+      </article>
+
+      <article class="product-card" data-category="stones">
+        <div class="product-img-placeholder" aria-hidden="true">🌊</div>
+        <h3>Labradorite Palm Stone</h3>
+        <p>Iridescent flash. Carries the energy of transformation.</p>
+        <p class="price">$22.00</p>
+      </article>
+
+      <article class="product-card" data-category="candles">
+        <div class="product-img-placeholder" aria-hidden="true">🕯️</div>
+        <h3>Forest Protection Candle</h3>
+        <p>Hand-poured beeswax with cedarwood and black pepper. Burns 40 hr.</p>
+        <p class="price">$16.00</p>
+      </article>
+
+      <article class="product-card" data-category="candles">
+        <div class="product-img-placeholder" aria-hidden="true">🌙</div>
+        <h3>New Moon Intention Candle</h3>
+        <p>Soy wax, jasmine &amp; sandalwood. Set intentions as it burns.</p>
+        <p class="price">$14.00</p>
+      </article>
+
+      <article class="product-card" data-category="herbs">
+        <div class="product-img-placeholder" aria-hidden="true">🌿</div>
+        <h3>White Sage Bundle</h3>
+        <p>Ethically sourced, dried sage for clearing and cleansing space.</p>
+        <p class="price">$9.00</p>
+      </article>
+
+      <article class="product-card" data-category="herbs">
+        <div class="product-img-placeholder" aria-hidden="true">🌸</div>
+        <h3>Rose Petal &amp; Lavender Blend</h3>
+        <p>A loose herbal mix for love, peace, and restful sleep.</p>
+        <p class="price">$7.00</p>
+      </article>
+
+      <article class="product-card" data-category="tools">
+        <div class="product-img-placeholder" aria-hidden="true">🔮</div>
+        <h3>Selenite Charging Plate</h3>
+        <p>Cleanse and recharge your stones on this smooth oval plate.</p>
+        <p class="price">$20.00</p>
+      </article>
+
+      <article class="product-card" data-category="tools">
+        <div class="product-img-placeholder" aria-hidden="true">✍️</div>
+        <h3>Leather-Bound Grimoire</h3>
+        <p>Blank journal with deckled edges. 200 pages of unlined magic.</p>
+        <p class="price">$28.00</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ── ABOUT ─────────────────────────────────────────────── -->
+  <section id="about" class="page-section">
+    <h2>About the Badger</h2>
+
+    <div class="about-grid">
+      <div>
+        <p>Esoteric Badger opened its doors in 2019 in a narrow storefront that smelled faintly of clove and old paper. The name came from a simple truth: badgers are diggers. They move through the dark to find things others overlook. That's the philosophy behind every purchase order we make.</p>
+
+        <p>We don't stock what's trending. We stock what we'd actually use — stones chosen by hand, candles made by people who know their botanicals, and tools that hold up to real practice rather than looking good on a shelf for two weeks.</p>
+
+        <div class="glyph-rule" aria-hidden="true">☽ ✦ ☾</div>
+
+        <h3>Our Philosophy</h3>
+        <p>The occult is a broad word for a simple idea: there is more to the world than what we can immediately see, and curiosity about that depth is worth encouraging. We welcome the deeply experienced practitioner and the person who bought their first tarot deck last Tuesday with equal enthusiasm.</p>
+
+        <p>We ask one thing: come with genuine curiosity, and leave with something that feels right. If nothing feels right, browse for as long as you like. The cat on the counter doesn't mind.</p>
+      </div>
+
+      <div>
+        <figure>
+          <!-- Replace with a real photo of the owner or storefront -->
+          <img src="images/owner.jpg" alt="The shop owner holding a collection of raw crystals at the Esoteric Badger counter" width="380" height="460">
+          <figcaption>Margot — founder, chief buyer, and the reason we always have fresh lavender.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ──────────────────────────────────────────── -->
+  <section id="services" class="page-section">
+    <h2>Services</h2>
+
+    <p>Beyond our shelves, we offer a small selection of in-person and virtual services. All sessions are by appointment. We are not medical practitioners and do not offer medical advice — what we offer is time, attention, and a genuine practice.</p>
+
+    <p>Appointments can be booked through the contact form. We typically respond within 48 hours with available times.</p>
+
+    <div class="glyph-rule" aria-hidden="true">☽ ✦ ☾ ✦ ☽</div>
+
+    <ul class="service-list">
+      <li>
+        <span class="icon" aria-hidden="true">🃏</span>
+        <div>
+          <strong>Tarot Reading — $45 / 45 min</strong>
+          An exploratory reading using the Rider-Waite or Thoth deck, depending on your question's nature. Not prediction — reflection, pattern recognition, and a different angle on a hard question.
+        </div>
+      </li>
+      <li>
+        <span class="icon" aria-hidden="true">💎</span>
+        <div>
+          <strong>Crystal Consultation — $30 / 30 min</strong>
+          Discuss your current intentions, challenges, or areas of focus and leave with a personally selected set of three stones and guidance on how to work with them.
+        </div>
+      </li>
+      <li>
+        <span class="icon" aria-hidden="true">🌿</span>
+        <div>
+          <strong>Herbal &amp; Ritual Planning — $60 / 60 min</strong>
+          Whether you're setting up a home altar, planning a seasonal ritual, or just learning the basics, this session covers the practical and symbolic dimensions of working with herbs, candles, and intention.
+        </div>
+      </li>
+      <li>
+        <span class="icon" aria-hidden="true">🌙</span>
+        <div>
+          <strong>New Moon Workshop — $20 per person</strong>
+          Held monthly, the evening before each new moon. A two-hour gathering for setting intentions, doing a group reading, and making a simple candle together. Check our Instagram for upcoming dates.
+        </div>
+      </li>
+    </ul>
+
+    <figure>
+      <!-- Replace with a photo of a service session, workshop, or altar setup -->
+      <img src="images/workshop.jpg" alt="A small workshop group gathered around an altar with candles and crystals" width="860" height="380">
+      <figcaption>Our monthly New Moon Workshop — beginners always welcome.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ── CONTACT ───────────────────────────────────────────── -->
+  <section id="contact" class="page-section">
+    <h2>Find Us</h2>
+
+    <p>We are a physical shop first. The best way to experience Esoteric Badger is to walk through the door on a slow Tuesday afternoon, but we also respond to messages and take appointment requests through the form below.</p>
+
+    <p>
+      <strong>Hours:</strong> Tuesday–Saturday, 11am–7pm<br>
+      <strong>Address:</strong> 412 Narrow Lane, NoDa, Charlotte, NC 28205<br>
+      <strong>Instagram:</strong> <a href="https://instagram.com" target="_blank">@esotericbadger</a>
+    </p>
+
+    <div class="glyph-rule" aria-hidden="true">☽ ✦ ☾</div>
+
+    <h3>Send a Message</h3>
+
+    <!-- Contact form with JS validation (reinforces dynamic feature 3) -->
+    <form id="contact-form" novalidate>
+
+      <div>
+        <label for="f-name">Your Name <span aria-hidden="true">*</span></label>
+        <input type="text" id="f-name" name="name" placeholder="Preferred name" required>
+      </div>
+
+      <div>
+        <label for="f-email">Email Address <span aria-hidden="true">*</span></label>
+        <input type="email" id="f-email" name="email" placeholder="you@example.com" required>
+      </div>
+
+      <div>
+        <label for="f-subject">Reason for Reaching Out</label>
+        <select id="f-subject" name="subject">
+          <option value="">— Choose one —</option>
+          <option value="appointment">Book an appointment</option>
+          <option value="wholesale">Wholesale inquiry</option>
+          <option value="general">General question</option>
+          <option value="other">Something else</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="f-message">Your Message <span aria-hidden="true">*</span></label>
+        <textarea id="f-message" name="message" placeholder="What's on your mind?" required></textarea>
+      </div>
+
+      <p id="form-msg" class="form-msg" aria-live="polite"></p>
+
+      <button class="submit-btn" type="submit">Send Message</button>
+
+    </form>
+  </section>
+
+</main>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════ -->
+<footer>
+  <p class="glyph-rule" aria-hidden="true">☽ ✦ ☾ ✦ ☽</p>
+  <p><em>We dig up the extraordinary.</em></p>
+  <p>412 Narrow Lane, NoDa, Charlotte, NC 28205 &nbsp;|&nbsp; Tue–Sat 11am–7pm</p>
+  <p>
+    <a href="https://webpages.charlotte.edu/eblanch1/" target="_blank">Eric Blanchard</a> &mdash;
+    designed &amp; developed by
+    <a href="../itis3135/blanchardindustries.org/index.html" target="_blank">Blanchard Industries</a>
+    &copy; 2026
+  </p>
+</footer>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>
