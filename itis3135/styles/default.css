@@ -1,63 +1,181 @@
+/*
+  ITIS 3135 Course Site — default.css
+  Color palette: https://coolors.co/1b2a4a-2e5fa3-f0f4fc-e8f0fb-f7c948
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+:root {
+    --navy:  #1b2a4a;
+    --blue:  #2e5fa3;
+    --light: #f0f4fc;
+    --panel: #ffffff;
+    --gold:  #f7c948;
+    --text:  #1b2a4a;
+    --muted: #3d5080;
+    --link-visited: #a8bbdf;
+    --max-width: 800px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    * { scroll-behavior: smooth; }
+}
+
+body {
+    font-family: 'Lato', Arial, sans-serif;
+    background-color: var(--light);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* ── Shared width constraint so nav, main, and footer all align ── */
+nav,
+main,
+footer {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ── Navigation ── */
 nav {
+    background-color: var(--navy);
+    padding: 16px 6%;
     text-align: center;
-    background-color: #6ea5ff;
-    padding:20px;
-    color: white;
+    border-radius: 0 0 6px 6px;
 }
 
 nav a {
-    color:white
+    color: #c9d6f0;
+    text-decoration: none;
+    padding: 0 10px;
+    border-right: 1px solid #3d5080;
+    line-height: 1;
+    font-size: 0.9rem;
 }
 
-nav a:visited{
-    color:darkblue
+nav a:last-child {
+    border-right: none;
 }
 
-
-body {
-    background-color: rgb(208, 233, 255);
-    font-family: Arial, sans-serif;
-    
+nav a:hover,
+nav a:focus {
+    color: var(--gold);
 }
+
+nav a:visited {
+    color: var(--link-visited);
+}
+
+/* ── Main content ── */
 main {
-    margin: 30px;
+    padding: 40px 6%;
 }
 
 h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.4rem;
+    color: var(--gold);
+    letter-spacing: 0.02em;
     text-align: center;
 }
 
+h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.8rem;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gold);
+}
+
+h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.15rem;
+    color: var(--blue);
+    margin-bottom: 8px;
+}
+
+p {
+    color: var(--muted);
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--blue);
+}
+
+a:hover,
+a:focus {
+    color: var(--navy);
+}
+
+/* Links inside headings get the gold treatment */
+h3 a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+h3 a:hover,
+h3 a:focus {
+    color: var(--navy);
+    text-decoration: underline;
+}
+
+h3 a:visited {
+    color: var(--muted);
+}
+
 ul {
-    padding: 10px;
+    padding-left: 20px;
 }
 
 li {
-    padding: 2px;
+    padding: 3px 0;
+    color: var(--muted);
 }
-
-h3 a{
-    color: darkgreen;
-}
-h3 a:visited{
-    color: darkblue;
-}
-
 
 .contract {
     text-align: center;
 }
 
+/* ── Footer ── */
 footer {
+    background-color: var(--navy);
+    color: #c9d6f0;
     text-align: center;
-    background-color: #6ea5ff;
-    padding:20px;
-    color: white;
+    padding: 28px 6%;
+    font-size: 0.9rem;
+    border-radius: 6px 6px 0 0;
 }
 
 footer a {
-    color:white
+    color: #c9d6f0;
+    text-decoration: none;
 }
 
-footer a:visited{
-    color:darkblue
+footer a:hover,
+footer a:focus {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+footer a:visited {
+    color: var(--link-visited);
+}
+
+footer p {
+    margin-top: 10px;
+    color: #a8bbdf;
+}
+
+footer p a {
+    color: var(--gold);
 }
